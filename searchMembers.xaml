@@ -1,0 +1,64 @@
+﻿<Window x:Class="Assess3T2.searchMembers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assess3T2"
+        mc:Ignorable="d"
+        Title="City Gym - Search Members" Height="549" Width="852">
+    <Grid>
+        <Grid Margin="10,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Search Options:" HorizontalAlignment="Left" Height="59" Margin="0,217.05,0,0" VerticalAlignment="Top" Width="809"/>
+            <Label Content="Name:" HorizontalAlignment="Left" Margin="22,239,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.477,2.346"/>
+            <TextBox x:Name="NameSearchTerm" HorizontalAlignment="Left" Height="23" Margin="71,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352"/>
+            <ComboBox x:Name="MemberSearchTerm" HorizontalAlignment="Left" Margin="432,243,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="All Memberships" IsSelected="True"/>
+                <ComboBoxItem Content="Basic Membership"/>
+                <ComboBoxItem Content="Regular Membership"/>
+                <ComboBoxItem Content="Premium Membership"/>
+            </ComboBox>
+            <Button x:Name="btn_Search" Content="Search" HorizontalAlignment="Left" Margin="584,243,0,0" VerticalAlignment="Top" Width="79" Height="22" Click="btn_Search_Click" Background="#FF1CE013"/>
+            <Button x:Name="btn_Reset" Content="Reset" HorizontalAlignment="Left" Margin="687,243,0,0" VerticalAlignment="Top" Width="78" Height="22" Click="btn_Reset_Click" Background="#FFF32E25"/>
+            <GroupBox Header="Individual Member Details:" HorizontalAlignment="Left" Height="198" Margin="0,290,0,0" VerticalAlignment="Top" Width="809">
+                <Grid HorizontalAlignment="Left" Width="764" Margin="0,0,0,-23">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="First Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="79"/>
+                    <Label Content="Last Name:" HorizontalAlignment="Left" Margin="265,9,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.845,0.615"/>
+                    <Label Content="Phone Number:" HorizontalAlignment="Left" Margin="502,10,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Label Content="Address:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="79"/>
+                    <Label Content="Membership:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="sDirectDebit" Content="Direct Debit" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <RadioButton x:Name="srchWeekly" Content="Weekly" HorizontalAlignment="Left" Margin="144,116,0,0" VerticalAlignment="Top" GroupName="sFrequency" IsEnabled="False"/>
+                    <RadioButton x:Name="srchMonthly" Content="Monthly" HorizontalAlignment="Left" Margin="265,116,0,0" VerticalAlignment="Top" GroupName="sFrequency" IsEnabled="False"/>
+                    <CheckBox x:Name="srch27Access" Content="24/7 Access" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <CheckBox x:Name="srchOnlineVideos" Content="Online Fitness Videos" HorizontalAlignment="Left" Margin="144,150,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <CheckBox x:Name="srchPT" Content="Personal Trainer" HorizontalAlignment="Left" Margin="341,150,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <CheckBox x:Name="srchDietConsult" Content="Diet Consultation" HorizontalAlignment="Left" Margin="502,150,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <TextBox x:Name="srchFirstName" HorizontalAlignment="Left" Height="23" Margin="110,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False"/>
+                    <TextBox x:Name="srchLastName" HorizontalAlignment="Left" Height="23" Margin="341,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False"/>
+                    <TextBox x:Name="srchPhoneNumber" HorizontalAlignment="Left" Height="23" Margin="599,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" IsEnabled="False"/>
+                    <TextBox x:Name="srchAddress" HorizontalAlignment="Left" Height="23" Margin="110,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" IsEnabled="False"/>
+                    <TextBox x:Name="srchMembership" HorizontalAlignment="Left" Height="23" Margin="110,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <RadioButton x:Name="srch3Mths" Content="3 Months" HorizontalAlignment="Left" Margin="265,71,0,0" VerticalAlignment="Top" Height="14" Width="93" GroupName="srchMembershipDuration" IsEnabled="False"/>
+                    <RadioButton x:Name="srch12Mths" Content="12 Months" HorizontalAlignment="Left" Margin="389,71,0,0" VerticalAlignment="Top" GroupName="srchMembershipDuration" IsEnabled="False"/>
+                    <RadioButton x:Name="srch24Mths" Content="24 Months" HorizontalAlignment="Left" Margin="529,71,0,0" VerticalAlignment="Top" GroupName="srchMembershipDuration" IsEnabled="False"/>
+                </Grid>
+            </GroupBox>
+            <ListView x:Name="MemberListView" HorizontalAlignment="Left" Height="136" Margin="10,56,0,0" VerticalAlignment="Top" Width="786" SelectionChanged="MemberListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="600"/>
+                        <GridViewColumn Width="170" Header="Membership"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <GroupBox Header="Search result:" HorizontalAlignment="Left" Height="184" Margin="0,28.05,0,0" VerticalAlignment="Top" Width="809"/>
+            <Button x:Name="btn_Help" Content="Help" HorizontalAlignment="Left" Margin="690,8.05,0,0" VerticalAlignment="Top" Width="75" Background="#FF3CE2E2" Click="btn_Help_Click"/>
+        </Grid>
+    </Grid>
+</Window>

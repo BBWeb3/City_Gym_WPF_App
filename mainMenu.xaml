@@ -1,0 +1,16 @@
+﻿<Window x:Name="mainMenus" x:Class="Assess3T2.mainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assess3T2"
+        mc:Ignorable="d"
+        Title="City Gym - Main Menu" Height="461" Width="926">
+    <Grid Margin="0,0,2,1.5">
+        <Button Content="Search For Members" HorizontalAlignment="Left" Margin="347,279.11,0,0" VerticalAlignment="Top" Width="226" Height="91.9" FontSize="20" Background="#FFA14CE8" Click="Button_Click_1"/>
+        <Button Content="Book Fitness Class" HorizontalAlignment="Left" Margin="657,279.61,0,57.49" Width="223" FontSize="20" Background="#FF4B4BBF" Click="Button_Click_2"/>
+        <Button Content="Membership Registration" HorizontalAlignment="Left" Margin="38,280.27,0,0" VerticalAlignment="Top" Width="226" Height="90.74" FontSize="18" Background="#FF7DCB3D" Click="Button_Click"/>
+        <Image Margin="237,-36,259,118" Source="logo3.png" Stretch="Fill"/>
+
+    </Grid>
+</Window>
