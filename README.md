@@ -69,3 +69,6 @@ ID = 1, Description = Basic, Cost = 10).
 suggested that a help function is embedded into the application. This could be a menu
 item, and/or an additional UI screen. Help instructions should be clear, making it easy
 for any user to understand.
+
+For this project I have elected to use an SQLite Database
+
