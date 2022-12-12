@@ -1,5 +1,8 @@
 # City_Gym_WPF_App
 City_Gym_WPF_App_BIT502_A3
+
+The following are the details of the project brief that outlines the scope and nature of this repository:
+
 BIT502 Fundamentals of Programming
 Assessment 3 Appendix A: Case Study
 
